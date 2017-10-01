@@ -1,0 +1,41 @@
+{
+  "name": "myrating",
+  "version": "1.0.0",
+  "description": "Rate Movies",
+  "main": "index.js",
+  "scripts": {
+    "watch": "babel --watch src --out-dir build --source-maps --copy-files",
+    "build": "babel src --out-dir build --copy-files",
+    "test": "npm test",
+    "start": "node build/app.js",
+    "start-dev": "NODE_ENV=development PORT=8081 nodemon build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajeshgutta01/myrating.git"
+  },
+  "author": "Rajesh Gutta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajeshgutta01/myrating/issues"
+  },
+  "homepage": "https://github.com/rajeshgutta01/myrating#readme",
+  "dependencies": {
+    "babel-root-import": "^4.1.8",
+    "body-parser": "^1.18.2",
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
+    "koa-logger": "^1.3.0",
+    "koa-router": "^5.4.0",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.13.0",
+    "thunkify": "^2.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.12.1"
+  }
+}
