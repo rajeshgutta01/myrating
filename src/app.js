@@ -1,5 +1,3 @@
-// var express = require('express');
-// var app = express();
 import 'babel-polyfill';
 import koa from 'koa';
 import bodyParser from 'koa-bodyparser';
@@ -10,10 +8,8 @@ import Router from '~/src/lib/routes';
 import Database from '~/src/lib/database';
 const app = new koa();
 
-// Database.connect();
-// // console.log('start app.context');
-// app.context.db = Database.client;
-// console.log('done app.context');
+Database.connect();
+app.context.db = Database.client;
 
 app
   .use(koaLogger())
@@ -21,9 +17,8 @@ app
   .use(Router.routes())
   .use(Router.allowedMethods());
 
-// console.log('this.db', this.db);
 Router.get('/', function (req, res) {
-   this.body = 'Hello MyRating';
+   this.body = 'Welcome to MyRating';
 })
 
 app.env = process.env.NODE_ENV || 'development';
